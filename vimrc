@@ -24,10 +24,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
-let g:airline_theme='deus'
 
-silent! packadd! dracula_pro
-syntax enable
-let g:dracula_colorterm = 0
+let g:airline_theme='deus'
 colorscheme dracula
-colorscheme dracula_pro_blade
+
+
+" DRACULA PRO - override! 
+" Safe to remove if you dont have dracula_pro!
+:silent! packadd! dracula_pro
+:silent! syntax enable
+:silent! let g:dracula_colorterm = 0
+:silent! colorscheme dracula_pro_blade
+:silent! let g:airline_theme='dracula_pro'
