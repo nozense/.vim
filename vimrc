@@ -27,7 +27,7 @@ endif
 " Define localrc!
 let $LOCALRC = $VIMHOME."/local.vimrc"
 " include (source) local rc!
-so $LOCALRC
+silent! so $LOCALRC
 
 call plug#begin()
 Plug 'vim-airline/vim-airline'
