@@ -18,16 +18,16 @@ set guioptions-=m  "menu bar
 set guioptions-=T  "toolbar
 set guioptions-=r  "scrollbar
 
-" THEME SETTINGS!
-packadd! dracula_pro
-syntax enable
-let g:dracula_colorterm = 0
-colorscheme dracula_pro_blade
-
 call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
+
 let g:airline_theme='deus'
 
-
+silent! packadd! dracula_pro
+syntax enable
+let g:dracula_colorterm = 0
+colorscheme dracula
+colorscheme dracula_pro_blade
