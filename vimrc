@@ -18,8 +18,16 @@ set guioptions-=m  	" No menu bar
 set guioptions-=T  	" No toolbar
 set guioptions-=r  	" No scrollbar
 
-
-so ~/.vim/local.vimrc
+" Make a home dir!
+if has('win32') || has ('win64')
+    let $VIMHOME = $VIM."/vimfiles"
+else
+    let $VIMHOME = $HOME."/.vim"
+endif
+" Define localrc!
+let $LOCALRC = $VIMHOME."/local.vimrc"
+" include (source) local rc!
+silent! so $LOCALRC
 
 call plug#begin()
 Plug 'vim-airline/vim-airline'
@@ -43,7 +51,7 @@ nmap <Leader>L <Plug>(easymotion-overwin-line)
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
-let g:airline_theme='deus'
+let g:airline_theme='dracula'
 colorscheme dracula
 
 
